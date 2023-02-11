@@ -32,8 +32,6 @@ private:
   const Color m_square_color
   { GREEN };
 
-
-
 public:
   video();
 

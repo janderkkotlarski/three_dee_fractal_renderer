@@ -1,5 +1,7 @@
 #include "video.h"
 
+#include "imager.h"
+
 // #define RLIGHTS_IMPLEMENTATION
 // #include "rlights.h"
 
@@ -22,6 +24,15 @@ void video::display()
   InitWindow(m_window_width, m_window_height, "spheres");
 
   SetTargetFPS(m_fps);
+
+  const Color kolor
+  { RED };
+
+  const int side
+  { 2*m_square_side };
+
+  imager img
+  { side, side, kolor };
 
   while (!WindowShouldClose())            // Detect window close button or ESC key
   {

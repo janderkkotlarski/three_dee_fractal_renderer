@@ -55,8 +55,10 @@ LIBS += -LC:\raylib\raylib
 LIBS += -LC:\raylib\
 
 SOURCES += \
+        imager.cpp \
         main.cpp \
         video.cpp
 
 HEADERS += \
+  imager.h \
   video.h
