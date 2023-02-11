@@ -21,6 +21,8 @@ public:
   imager(const int width, const int height, const Color kolor);
 
   Image get_image();
+
+  void redraw();
 };
 
 #endif // IMAGER_H

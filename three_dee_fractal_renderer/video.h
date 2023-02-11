@@ -40,6 +40,8 @@ private:
 public:
   video();
 
+  void fill_window(const Texture &tex);
+
   void display();
 };
 

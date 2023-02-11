@@ -18,6 +18,17 @@ video::video()
 
 }
 
+void video::fill_window(const Texture &tex)
+{
+  for (int x_pos{ 0 }; x_pos < m_window_width; ++x_pos)
+  {
+    for (int y_pos{ 0 }; y_pos < m_window_height; ++y_pos)
+    {
+      DrawTexture(tex, x_pos, y_pos, RED);
+    }
+  }
+}
+
 void video::display()
 {
   SetConfigFlags(FLAG_MSAA_4X_HINT);  // Enable Multi Sampling Anti Aliasing 4x (if available)
@@ -25,17 +36,29 @@ void video::display()
 
   SetTargetFPS(m_fps);
 
+  Image img
+  { GenImageColor(1, 1, WHITE) };
+
   Texture tex
-  { LoadTextureFromImage(m_img.get_image()) };
+  { LoadTextureFromImage(img) };
 
   while (!WindowShouldClose())            // Detect window close button or ESC key
   {
+
+
+
     BeginDrawing();
 
       ClearBackground(BLACK);
 
       DrawTexture(tex, 0, 0, WHITE);
 
+      fill_window(tex);
+
+      DrawFPS(20, 20);
+
     EndDrawing();
+
+
   }
 }
