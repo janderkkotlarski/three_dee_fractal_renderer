@@ -1,6 +1,8 @@
 #ifndef VIDEO_H
 #define VIDEO_H
 
+#include "imager.h"
+
 #include "raylib.h"
 
 #include <string>
@@ -21,16 +23,19 @@ private:
   { 120 };
 
   const int m_square_side
-  { 100 };
+  { m_window_width };
 
   const int m_square_pos_x
-  { 50 };
+  { 0 };
 
   const int m_square_pos_y
-  { 30 };
+  { 0 };
 
   const Color m_square_color
   { GREEN };
+
+  imager m_img
+  { m_window_width, m_window_height, m_square_color };
 
 public:
   video();

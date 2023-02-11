@@ -1,6 +1,6 @@
 #include "video.h"
 
-#include "imager.h"
+
 
 // #define RLIGHTS_IMPLEMENTATION
 // #include "rlights.h"
@@ -25,14 +25,8 @@ void video::display()
 
   SetTargetFPS(m_fps);
 
-  const Color kolor
-  { RED };
-
-  const int side
-  { 2*m_square_side };
-
-  imager img
-  { side, side, kolor };
+  Texture tex
+  { LoadTextureFromImage(m_img.get_image()) };
 
   while (!WindowShouldClose())            // Detect window close button or ESC key
   {
@@ -40,7 +34,7 @@ void video::display()
 
       ClearBackground(BLACK);
 
-      DrawRectangle(m_square_pos_x, m_square_pos_y, m_square_side, m_square_side, m_square_color);
+      DrawTexture(tex, 0, 0, WHITE);
 
     EndDrawing();
   }

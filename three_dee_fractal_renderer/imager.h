@@ -17,11 +17,10 @@ private:
 
   Image m_image;
 
-  Texture m_tex;
-
 public:
   imager(const int width, const int height, const Color kolor);
 
+  Image get_image();
 };
 
 #endif // IMAGER_H
