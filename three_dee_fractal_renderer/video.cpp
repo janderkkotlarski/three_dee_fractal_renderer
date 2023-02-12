@@ -18,13 +18,14 @@ video::video()
 
 }
 
-void video::fill_window(const Texture &tex)
+void video::fill_window()
 {
   for (int x_pos{ 0 }; x_pos < m_window_width; ++x_pos)
   {
     for (int y_pos{ 0 }; y_pos < m_window_height; ++y_pos)
     {
-      DrawTexture(tex, x_pos, y_pos, RED);
+      DrawPixel(x_pos, y_pos, RED);
+      // DrawTexture(tex, x_pos, y_pos, RED);
     }
   }
 }
@@ -53,7 +54,7 @@ void video::display()
 
       DrawTexture(tex, 0, 0, WHITE);
 
-      fill_window(tex);
+      fill_window();
 
       DrawFPS(20, 20);
 
