@@ -57,8 +57,10 @@ LIBS += -LC:\raylib\
 SOURCES += \
         imager.cpp \
         main.cpp \
+        mandelbrot_2d.cpp \
         video.cpp
 
 HEADERS += \
   imager.h \
+  mandelbrot_2d.h \
   video.h

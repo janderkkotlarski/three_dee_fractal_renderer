@@ -45,9 +45,6 @@ void video::display()
 
   while (!WindowShouldClose())            // Detect window close button or ESC key
   {
-
-
-
     BeginDrawing();
 
       ClearBackground(BLACK);
