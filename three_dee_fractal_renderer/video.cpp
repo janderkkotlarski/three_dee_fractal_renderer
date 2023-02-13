@@ -1,6 +1,6 @@
 #include "video.h"
 
-
+#include "mandelbrot_2d.h"
 
 // #define RLIGHTS_IMPLEMENTATION
 // #include "rlights.h"
@@ -19,13 +19,23 @@ video::video()
 }
 
 void video::fill_window()
-{
+{  
+  mandelbrot_2d mandel;
+
   for (int x_pos{ 0 }; x_pos < m_window_width; ++x_pos)
   {
     for (int y_pos{ 0 }; y_pos < m_window_height; ++y_pos)
     {
-      DrawPixel(x_pos, y_pos, RED);
-      // DrawTexture(tex, x_pos, y_pos, RED);
+      const Vector2 posit
+      { 1.0f*float(x_pos)/float(m_window_width) - 1.0f,
+        1.0f*float(y_pos)/float(m_window_height) - 1.0f };
+
+      const int amount
+      { 20 };
+
+      // ImageDrawPixel(&m_image, x_pos, y_pos, mandel.point(posit, amount));
+
+      DrawPixel(x_pos, y_pos, mandel.point(posit, amount));
     }
   }
 }
