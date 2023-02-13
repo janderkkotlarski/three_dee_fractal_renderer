@@ -14,10 +14,10 @@ private:
   { "3D Fractal Renderer" };
 
   const int m_window_width
-  { 800 };
+  { 200 };
 
   const int m_window_height
-  { 800 };
+  { 200 };
 
   const int m_fps
   { 120 };
