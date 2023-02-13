@@ -25,6 +25,30 @@ void mandelbrot_2d::iterate()
 
 void mandelbrot_2d::iterate(const int amount)
 {
+  int count
+  { 0 };
 
+  while (count < amount)
+  {
+    iterate();
 
+    ++count;
+  }
+}
+
+Color mandelbrot_2d::colorize()
+{
+  if (m_current.x*m_current.x + m_current.y*m_current.y < m_threshold)
+  { return Color{ WHITE }; }
+
+  return Color{ BLACK };
+}
+
+Color mandelbrot_2d::point(const Vector2 &posit, const int amount)
+{
+  reposit(posit);
+
+  iterate(amount);
+
+  return colorize();
 }

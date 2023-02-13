@@ -18,8 +18,8 @@ private:
   Vector2 m_current
   { 0.0f, 0.0f };
 
-public:
-  mandelbrot_2d();
+  const float m_threshold
+  { 10.0f };
 
   void reset();
 
@@ -28,6 +28,13 @@ public:
   void iterate();
 
   void iterate(const int amount);
+
+  Color colorize();
+
+public:
+  mandelbrot_2d();
+
+  Color point(const Vector2 &posit, const int amount);
 };
 
 #endif // MANDELBROT_2D_H
