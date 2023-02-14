@@ -39,6 +39,11 @@ INCLUDEPATH += C:\raylib\MinGW\bin
 INCLUDEPATH += C:\raylib\raylib
 INCLUDEPATH += C:\raylib\
 
+INCLUDEPATH += C:/Dry/Source/ThirdParty/SDL/include
+
+INCLUDEPATH += C:\SDL2-2.26.3\x86_64-w64-mingw32\include
+INCLUDEPATH += C:\SDL2-2.26.3\x86_64-w64-mingw32\include\SDL2
+
 LIBS += -lraylib -Iexternal -lopengl32 -lgdi32 -lwinmm
 LIBS += -static -lpthread
 
@@ -57,10 +62,12 @@ LIBS += -LC:\raylib\
 SOURCES += \
         imager.cpp \
         main.cpp \
+        mandel_sdl2.cpp \
         mandelbrot_2d.cpp \
         video.cpp
 
 HEADERS += \
   imager.h \
+  mandel_sdl2.h \
   mandelbrot_2d.h \
   video.h

@@ -27,15 +27,13 @@ void video::fill_window()
     for (int y_pos{ 0 }; y_pos < m_window_height; ++y_pos)
     {
       const Vector2 posit
-      { 1.0f*float(x_pos)/float(m_window_width) - 1.0f,
-        1.0f*float(y_pos)/float(m_window_height) - 1.0f };
+      { m_dult*(float(x_pos)/float(m_window_width) - 0.5f),
+        m_dult*(float(y_pos)/float(m_window_height) - 0.5f) };
 
-      const int amount
-      { 20 };
 
       // ImageDrawPixel(&m_image, x_pos, y_pos, mandel.point(posit, amount));
 
-      DrawPixel(x_pos, y_pos, mandel.point(posit, amount));
+      DrawPixel(x_pos, y_pos, mandel.point(posit, m_depth));
     }
   }
 }

@@ -37,6 +37,18 @@ private:
   imager m_img
   { m_window_width, m_window_height, m_square_color };
 
+  const float m_double
+  { 2.0f };
+
+  const float m_mult
+  { 0.01f };
+
+  const float m_dult
+  { m_double*m_mult };
+
+  const int m_depth
+  { 10 };
+
 public:
   video();
 
