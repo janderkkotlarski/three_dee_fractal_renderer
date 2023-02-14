@@ -18,7 +18,7 @@ int main(int, char **)
 
   SDL_Init(SDL_INIT_EVERYTHING);
 
-  // SDL_Init(SDL_INIT_EVERYTHING);
+  // SDL_Init(SDL _INIT_EVERYTHING);
 
   SDL_Window* window
   { nullptr };
